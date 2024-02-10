@@ -3,18 +3,18 @@ import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from './components/Auth/login';
 import LoggedUserOrders from './components/LoggedUserOrders';
 
-
-
 function App() {
-  const { user, isAuthenticated } = useAuth0();
-  console.log(user);
+  const { user, isAuthenticated, isLoading } = useAuth0();
+
+  if (isLoading) {
+    return <div className='flex items-center justify-center font-bold text-2xl'>Loading...</div>;
+  }
 
   return (
     <div className='overflow-x-hidden'>
       {isAuthenticated ? (
         <>
-        <LoggedUserOrders/>
-
+          <LoggedUserOrders />
         </>
       ) : (
         <div className="flex flex-col items-center justify-between gap-5 p-4">
@@ -24,7 +24,6 @@ function App() {
       )}
     </div>
   );
-
 }
 
 export default App;
