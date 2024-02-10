@@ -6,8 +6,8 @@ import AddOrder from './AddOrder';
 
 const LoggedUserOrders = () => {
     return (
-        <div className='flex justify-start w-full'>
-            <div className='flex flex-col items-center w-1/5 p-4 '>
+        <div className='flex flex-col sm:flex-row justify-start w-full'>
+            <div className='flex flex-col items-center w-full sm:w-1/5 p-4 '>
                 <Profile />
                 <LogoutButton />
                 <AddOrder />

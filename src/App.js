@@ -18,7 +18,7 @@ function App() {
         </>
       ) : (
         <div className="flex flex-col items-center justify-between gap-5 p-4">
-          <div className='font-bold text-2xl'>Hey there, please login to see your orders</div>
+          <div className='font-bold text-2xl text-center sm:text-start'>Hey there, please login to see your orders</div>
           <LoginButton />
         </div>
       )}
