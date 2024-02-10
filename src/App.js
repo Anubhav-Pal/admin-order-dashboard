@@ -59,8 +59,6 @@ function App() {
     <div className='overflow-x-hidden'>
       {isAuthenticated ? (
         <>
-          {console.log(accessToken)}
-          {accessToken}
           <LoggedUserOrders />
         </>
       ) : (
