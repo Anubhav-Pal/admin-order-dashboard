@@ -67,7 +67,7 @@ const AddOrder = () => {
       case 'id':
         return value.trim() === '' ? 'ID is required' : '';
       case 'customer_name':
-        return value.trim() === '' ? 'Customer Name is required' : '';
+        return value.trim().length < 3 ? 'Customer Name is required (minimum 3 characters)' : '';
       case 'customer_email':
         return !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? 'Invalid email address' : '';
       case 'product':
