@@ -149,11 +149,11 @@ const Orders = () => {
                     <div className='my-2 w-full '>
                         <div className=' flex rounded-xl my-2' onSubmit={handleEditFormSubmit}>
                             <form action="" className='flex flex-col gap-2 w-full' >
-                                <input type="text" required={true} name="id" value={FormData.id} onChange={handleChange} placeholder='Enter ID' className='border p-2 rounded-xl outline-none text-sm' />
+                                <input type="text" autoComplete="off" required={true} name="id" value={FormData.id} onChange={handleChange} placeholder='Enter ID' className='border p-2 rounded-xl outline-none text-sm' />
                                 {errors.id && <span className="text-red-500 text-xs">{errors.id}</span>}
-                                <input type="text" required={true} name="customer_name" value={FormData.customer_name} onChange={handleChange} placeholder='Enter Customer Name' className='border p-2 rounded-xl outline-none text-sm' />
+                                <input type="text" autoComplete="off" required={true} name="customer_name" value={FormData.customer_name} onChange={handleChange} placeholder='Enter Customer Name' className='border p-2 rounded-xl outline-none text-sm' />
                                 {errors.customer_name && <span className="text-red-500 text-xs">{errors.customer_name}</span>}
-                                <input type="email" required={true} name="customer_email" value={FormData.customer_email} onChange={handleChange} placeholder='Enter Customer Email' className='border p-2 rounded-xl outline-none text-sm' />
+                                <input type="email" autoComplete="off" required={true} name="customer_email" value={FormData.customer_email} onChange={handleChange} placeholder='Enter Customer Email' className='border p-2 rounded-xl outline-none text-sm' />
                                 {errors.customer_email && <span className="text-red-500 text-xs">{errors.customer_email}</span>}
                                 {/* Changed to select input */}
                                 <select required={true} name="product" value={FormData.product} onChange={handleChange} className='border p-2 rounded-xl outline-none text-sm'>
