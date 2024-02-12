@@ -36,26 +36,25 @@ const Orders = () => {
             [name]: validateField(name, value)
         }));
     }
-
     const validateField = (name, value) => {
         // Custom validation logic for each field
         switch (name) {
             case 'id':
                 return value.trim() === '' ? 'ID is required' : '';
             case 'customer_name':
-                return value.trim().length < 3 ? 'Customer Name is required (minimum 3 characters)' : '';
+                return value.trim().length < 3 ? 'Customer Name is required (minimum 3 characters)' :
+                    !/^[a-zA-Z]+$/.test(value) ? 'Customer Name should contain only alphabetic characters' : '';
             case 'customer_email':
                 return !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? 'Invalid email address' : '';
             case 'product':
                 // Check if value is one of the allowed options
                 return ['Product 1', 'Product 2', 'Product 3'].includes(value) ? '' : 'Invalid product selection';
             case 'quantity':
-                return isNaN(value) || value < 1 ? 'Quantity must be at least one' : '';
+                return isNaN(value) || value < 1 ? 'Quantity must be be at least one' : '';
             default:
                 return '';
         }
     };
-
     const validateForm = () => {
         // Validate all fields and update errors
         const newErrors = {};

@@ -67,7 +67,8 @@ const AddOrder = () => {
       case 'id':
         return value.trim() === '' ? 'ID is required' : '';
       case 'customer_name':
-        return value.trim().length < 3 ? 'Customer Name is required (minimum 3 characters)' : '';
+        return value.trim().length < 3 ? 'Customer Name is required (minimum 3 characters)' : 
+          !/^[a-zA-Z]+$/.test(value) ? 'Customer Name should contain only alphabetic characters' : '';
       case 'customer_email':
         return !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? 'Invalid email address' : '';
       case 'product':
@@ -79,6 +80,7 @@ const AddOrder = () => {
         return '';
     }
   };
+  
 
   const validateForm = () => {
     // Validate all fields and update errors
